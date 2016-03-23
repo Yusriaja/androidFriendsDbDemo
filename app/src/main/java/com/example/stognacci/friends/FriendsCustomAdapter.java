@@ -51,7 +51,6 @@ public class FriendsCustomAdapter extends ArrayAdapter<Friend> {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), EditActivity.class);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_ID, String.valueOf(_id));
-                //intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_ID, _id);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_NAME, name);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_EMAIL, email);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_PHONE, phone);
@@ -66,7 +65,6 @@ public class FriendsCustomAdapter extends ArrayAdapter<Friend> {
                 FriendsDialog dialog = new FriendsDialog();
                 Bundle args = new Bundle();
                 args.putString(FriendsDialog.DIALOG_TYPE, FriendsDialog.DELETE_RECORD);
-                //args.putString(FriendsContract.FriendsColumns.FRIENDS_ID, String.valueOf(_id));
                 args.putInt(FriendsContract.FriendsColumns.FRIENDS_ID,_id);
                 args.putString(FriendsContract.FriendsColumns.FRIENDS_NAME, name);
                 dialog.setArguments(args);
