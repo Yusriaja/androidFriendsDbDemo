@@ -17,4 +17,7 @@
     <string name="search_noFriendsSnackBar">Nessun risultato</string>
     <string name="snackbar_edit_emptyValues">Per favore compila tutti i campi</string>
     <string name="snackbar_edit_invalidEmail">Per favore inserisci un indirizzo email valido</string>
+    <string name="hint_friendEmail">Indirizzo email</string>
+    <string name="hint_friendPhone">Numero di telefono</string>
+    <string name="hint_friendName">Nome completo</string>
 </resources>

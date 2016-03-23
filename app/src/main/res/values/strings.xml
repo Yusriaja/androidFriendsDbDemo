@@ -18,4 +18,7 @@
     <string name="snackbar_edit_emptyValues">Please fill all fields</string>
     <string name="snackbar_edit_invalidEmail">Please enter valid email</string>
     <string name="search_noFriendsSnackBar">No Friends found</string>
+    <string name="hint_friendName">Full name</string>
+    <string name="hint_friendPhone">Phone number</string>
+    <string name="hint_friendEmail">Email address</string>
 </resources>
