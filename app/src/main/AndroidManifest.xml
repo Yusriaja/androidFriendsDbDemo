@@ -21,7 +21,8 @@
         <activity
             android:name=".AddActivity"
             android:label="@string/AddActivity_title"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.stognacci.friends.MainActivity"/>
@@ -29,7 +30,8 @@
         <activity
             android:name=".EditActivity"
             android:label="@string/EditActivity_title"
-             android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.stognacci.friends.MainActivity"/>

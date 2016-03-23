@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -51,24 +52,31 @@ public class AddActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
-                } else {
-                    //TODO: use SnackBar instead of Toast
-                    //Toast.makeText(AddActivity.this, "Make sure you've entered valid values", Toast.LENGTH_SHORT).show();
-                    Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_emptyValues, Snackbar.LENGTH_LONG).show();
-
                 }
             }
         });
     }
 
-    //TODO: insert proper validation for email and phone number
     private boolean isValid() {
         if (mNameTextView.getText().toString().length() == 0 ||
                 mPhoneTextView.getText().toString().length() == 0 ||
                 mEmailTextView.getText().toString().length() == 0) {
+            Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_emptyValues, Snackbar.LENGTH_LONG).show();
+            return false;
+        } else if (!isValidEmail(mEmailTextView.getText().toString())) {
+            Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_invalidEmail, Snackbar.LENGTH_LONG).show();
+            Log.d(LOG_TAG,"Invalid email address!!!");
             return false;
         } else {
             return true;
+        }
+    }
+
+    private boolean isValidEmail(CharSequence target) {
+        if (TextUtils.isEmpty(target)) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
 

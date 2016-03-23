@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Friends</string>
     <string name="popup_delete_confirm">"Sei sicuro di voler cancellare %1$s dalla tua lista amici?"</string>
     <string name="main_add_title">Aggiungi</string>
-    <string name="main_deleteDatabase_title">Cancella Db</string>
+    <string name="main_deleteDatabase_title">Cancella Database</string>
     <string name="main_search_title">Cerca</string>
+    <string name="AddActivity_title">Aggiungi amico</string>
+    <string name="EditActivity_title">Modifica amico</string>
+    <string name="SearchActivity_title">Cerca amico</string>
+    <string name="deleteAll_confirm_toast">Database cancellato</string>
+    <string name="delete_confirm_toast">Amico cancellato</string>
+    <string name="popup_cancel">Annulla</string>
+    <string name="popup_deleteAll_confirm">Sei sicuro di voler cancellare tutti i dati</string>
+    <string name="popup_exitNoSave_confirm">Sei sicuro di voler uscire senza salvare</string>
+    <string name="search_button">Cerca</string>
+    <string name="search_edittext_hint">inserisci nome</string>
+    <string name="search_noFriendsSnackBar">Nessun risultato</string>
+    <string name="snackbar_edit_emptyValues">Per favore compila tutti i campi</string>
+    <string name="snackbar_edit_invalidEmail">Per favore inserisci un indirizzo email valido</string>
 </resources>

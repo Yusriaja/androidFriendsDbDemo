@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,8 +63,6 @@ public class EditActivity extends AppCompatActivity {
                     Intent intent = new Intent(EditActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                } else {
-                    Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_emptyValues, Snackbar.LENGTH_LONG).show();
                 }
             }
         });
@@ -73,9 +72,21 @@ public class EditActivity extends AppCompatActivity {
         if (mNameTextView.getText().toString().length() == 0 ||
                 mPhoneTextView.getText().toString().length() == 0 ||
                 mEmailTextView.getText().toString().length() == 0) {
+            Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_emptyValues, Snackbar.LENGTH_LONG).show();
+            return false;
+        } else if (!isValidEmail(mEmailTextView.getText().toString())) {
+            Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_edit_invalidEmail, Snackbar.LENGTH_LONG).show();
             return false;
         } else {
             return true;
+        }
+    }
+
+    private boolean isValidEmail(CharSequence target) {
+        if (TextUtils.isEmpty(target)) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
 //TODO: When pressing back or back from ActionBar, return to parent activity (not always to main activity)

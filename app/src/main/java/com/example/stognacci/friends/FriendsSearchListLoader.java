@@ -64,11 +64,9 @@ public class FriendsSearchListLoader extends AsyncTaskLoader<List<Friend>> {
         }
         mFriends = friends;
         List<Friend> oldFriendList = mFriends;
-        //TODO: Add Snackbar telling that we had no search results
         if (mFriends == null || mFriends.size() == 0) {
             Log.d(LOG_TAG, "No Data Returned!!!");
         }
-        //mFriends = friends;
         if (isStarted()) {
             super.deliverResult(friends);
         }

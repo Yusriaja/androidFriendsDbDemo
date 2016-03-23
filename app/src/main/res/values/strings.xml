@@ -16,4 +16,6 @@
     <string name="deleteAll_confirm_toast">Database deleted</string>
     <string name="popup_cancel">Cancel</string>
     <string name="snackbar_edit_emptyValues">Please fill all fields</string>
+    <string name="snackbar_edit_invalidEmail">Please enter valid email</string>
+    <string name="search_noFriendsSnackBar">No Friends found</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -69,6 +70,9 @@ public class SearchActivity extends AppCompatActivity
     public void onLoadFinished(Loader<List<Friend>> loader, List<Friend> friends) {
         mFriendsCustomAdapter.setData(friends);
         this.mFriendsRetrieved = friends;
+        if (mFriendsCustomAdapter.isEmpty()) {
+            Snackbar.make(findViewById(android.R.id.content), R.string.search_noFriendsSnackBar, Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override
