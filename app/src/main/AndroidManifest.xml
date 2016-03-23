@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.stognacci.friends"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission android:name="com.example.stognacci.friends.provider.READWRITE"/>
+    <uses-permission android:name="com.example.stognacci.friends.provider.READWRITE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddActivity"
+            android:label="@string/AddActivity_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.stognacci.friends.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="@string/EditActivity_title"
+             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.stognacci.friends.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/SearchActivity_title"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.stognacci.friends.MainActivity"/>
+        </activity>
+
+        <provider
+            android:name="com.example.stognacci.friends.FriendsProvider"
+            android:authorities="com.example.stognacci.friends.provider"
+            android:exported="true"
+            android:readPermission="com.example.stognacci.friends.provider.READWRITE"
+            android:writePermission="com.example.stognacci.friends.provider.READWRITE"/>
+    </application>
+
+</manifest>

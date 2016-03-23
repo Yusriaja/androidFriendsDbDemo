@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">Friends</string>
+    <string name="popup_delete_confirm">"Are you sure you want to delete %1$s from your friend list?"</string>
+    <string name="delete_confirm_toast">"Friend deleted"</string>
+    <string name="popup_confirm" translatable="false">OK</string>
+    <string name="main_search_title">Search</string>
+    <string name="main_add_title">Add</string>
+    <string name="main_deleteDatabase_title">Delete Database</string>
+    <string name="popup_deleteAll_confirm">Are you sure you want to delete entire database?</string>
+    <string name="popup_exitNoSave_confirm">Are you sure you want to exit without saving?</string>
+    <string name="search_edittext_hint">enter friend name</string>
+    <string name="search_button">Search</string>
+    <string name="AddActivity_title">Add a friend</string>
+    <string name="EditActivity_title">Edit friend</string>
+    <string name="SearchActivity_title">Search friend</string>
+    <string name="deleteAll_confirm_toast">Database deleted</string>
+    <string name="popup_cancel">Cancel</string>
+    <string name="snackbar_edit_emptyValues">Please fill all fields</string>
+</resources>
