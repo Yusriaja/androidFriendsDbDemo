@@ -22,7 +22,9 @@ import java.util.List;
  */
 public class SearchActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<Friend>> {
+
     private static final String LOG_TAG = SearchActivity.class.getSimpleName();
+    private static final String FRIENDS_KEY = "Friends";
     private FriendsCustomAdapter mFriendsCustomAdapter;
     private static int LOADER_ID = 1;
     private ContentResolver mContentResolver;
@@ -81,15 +83,17 @@ public class SearchActivity extends AppCompatActivity
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList("friend_list", (ArrayList) mFriendsRetrieved);
+        outState.putParcelableArrayList(FRIENDS_KEY, (ArrayList) mFriendsRetrieved);
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mFriendsRetrieved = (List) savedInstanceState.getParcelableArrayList("friend_list");
+        mFriendsRetrieved = (List) savedInstanceState.getParcelableArrayList(FRIENDS_KEY);
         if (mFriendsRetrieved != null) {
             mFriendsCustomAdapter.setData(mFriendsRetrieved);
         }
